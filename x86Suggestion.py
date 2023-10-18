@@ -292,7 +292,7 @@ def main():
     try:
         with open(file_name, "w") as code_file:
             while True:
-                user_input = session.prompt("Enter code")
+                user_input = session.prompt("Enter code : ")
                 if user_input.strip().lower() == "exit":
                     break
                 code_file.write(user_input + "\n")

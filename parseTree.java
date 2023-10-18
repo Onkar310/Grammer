@@ -13,7 +13,7 @@ import org.antlr.v4.gui.TreeViewer;
 
 public class parseTree {
     public static void main(String[] args) throws Exception {
-        // prepare token stream
+
         String path = "D:\\TY-SEM-1\\CD\\Project\\Grammer\\asm.txt";
 
         String inputCode = new String(Files.readAllBytes(Paths.get(path)));
@@ -30,7 +30,7 @@ public class parseTree {
         JPanel panel = new JPanel();
         TreeViewer viewer = new TreeViewer(Arrays.asList(
                 parser.getRuleNames()), tree);
-        viewer.setScale(1.5); // Scale a little
+        viewer.setScale(1.5);
         panel.add(viewer);
         frame.add(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
