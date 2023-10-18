@@ -11,9 +11,6 @@ import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.gui.TreeViewer;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 public class parseTree {
     public static void main(String[] args) throws Exception {
         // prepare token stream

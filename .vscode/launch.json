@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "parsetree",
+      "request": "launch",
+      "mainClass": "parsetree",
+      "projectName": "Grammer_61ea825e"
+    },
+    {
+      "type": "java",
+      "name": "parseTree",
+      "request": "launch",
+      "mainClass": "parseTree",
+      "projectName": "Grammer_61ea825e"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/TY-SEM-1/CD/Project/Grammer",
+      "program": "d:/TY-SEM-1/CD/Project/Grammer/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 from prompt_toolkit import PromptSession
 from prompt_toolkit.completion import Completer, Completion
 import re
-import subprocess
+
 
 valid_instructions = [
     "mov",
@@ -171,6 +171,7 @@ valid_numbers = [
 ]
 
 valid_registers = [
+    
     "ax",
     "bx",
     "cx",
@@ -193,6 +194,7 @@ valid_registers = [
     "ss",
     "fs",
     "gs",
+    ",",
 ]
 
 
@@ -251,7 +253,6 @@ class ContextCompleter(Completer):
                 suggestions = context_suggestions[last_part]
 
                 if "REGISTER" in suggestions:
-                    # If not a valid register prefix, display all registers
                     suggestions.remove("REGISTER")
                     suggestions.extend(valid_registers)
                 if "NUMBER" in suggestions:
@@ -272,6 +273,8 @@ class ContextCompleter(Completer):
                 ]
                 if bool(re.match(pattern, last_part)):
                     valid_instr_suggestions = [instr for instr in valid_numbers]
+               
+
                 if valid_instr_suggestions:
                     for suggestion in valid_instr_suggestions:
                         yield Completion(suggestion, start_position=0)
@@ -287,7 +290,7 @@ def main():
     file_name = "D:/TY-SEM-1/CD/Project/Grammer/asm.txt"
 
     try:
-        with open(file_name, "a") as code_file:
+        with open(file_name, "w") as code_file:
             while True:
                 user_input = session.prompt("Enter code")
                 if user_input.strip().lower() == "exit":
@@ -295,12 +298,16 @@ def main():
                 code_file.write(user_input + "\n")
     except KeyboardInterrupt:
         print("Keyboard interrupt detected. Running x.java...")
-        # Replace 'x.java' with the actual Java program name and path if needed.
-        java_file = "D:/TY-SEM-1/CD/Project/Grammer/x.java"
-        try:
-            subprocess.run(["java", java_file], check=True)
-        except subprocess.CalledProcessError:
-            print("An error occurred while running the Java program.")
+
+        import subprocess
+
+        java_command = "C:\\Program Files\\Java\\jdk-19\\bin\\java.exe"
+        class_path = "@C:\\Users\\Onkar\\AppData\\Local\\Temp\\cp_5rs1joh6kevpw90x5b9np2af0.argfile"
+        main_class = "parseTree"
+
+        command_list = [java_command, class_path, main_class]
+
+        subprocess.run(command_list)
         print("Goodbye!")
     finally:
         print("Code has been saved to", file_name)
