@@ -22,8 +22,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/TY-SEM-1/CD/Project/Grammer",
-      "program": "d:/TY-SEM-1/CD/Project/Grammer/build/Debug/outDebug",
+      "cwd": "d:/TY-SEM-1/CS",
+      "program": "d:/TY-SEM-1/CS/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
